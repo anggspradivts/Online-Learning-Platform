@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="bg-gray-400 p-3 ">
       <div className="nav-container grid grid-cols-2">
-        <div className="logo text-2xl font-bold">
+        <div className="logo text-2xl font-bold text-white">
           <h1>eLearn</h1>
         </div>
         <div className="flex justify-end">
