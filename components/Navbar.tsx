@@ -2,13 +2,13 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className="bg-gray-400 p-3">
+    <div className="bg-gray-400 p-3 ">
       <div className="nav-container grid grid-cols-2">
         <div className="logo text-2xl font-bold">
-          <h1>ELearn</h1>
+          <h1>eLearn</h1>
         </div>
         <div className="flex justify-end">
-          <input type="search" name="" id="" />
+          <input className="w-full rounded-2xl p-2" type="search" name="" id="" placeholder='search courses...' />
         </div>
       </div>
       <div className="flex gap-5">

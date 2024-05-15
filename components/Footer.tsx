@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="bg-gray-400">
       This is Footer
     </div>
   )

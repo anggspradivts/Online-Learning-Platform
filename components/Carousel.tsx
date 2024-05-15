@@ -22,7 +22,7 @@ const Carousel = () => {
   });
 
   return (
-    <div className="header h-[70vh] text-white">
+    <div className="header text-white">
       <div className="header-container p-10 flex justify-center items-center">
         <div className="text-3xl font-bold">Enhance Your Skills</div>
       </div>
@@ -31,6 +31,9 @@ const Carousel = () => {
       </div>
       <div className="category-list flex justify-center gap-5 pt-10">
         {filterCard}
+      </div>
+      <div className="flex justify-center py-10">
+        <button className="p-2 border-2 border-white mt-40 rounded-sm hover:text-orange-400 hover:backdrop-blur-xl transition-all duration-300">Discover More</button>
       </div>
     </div>
   );
