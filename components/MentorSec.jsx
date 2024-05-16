@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import MyBtn from "./MyBtn"
+
 
 const MentorSec = () => {
   return (
@@ -24,9 +26,7 @@ const MentorSec = () => {
             </p>
           </div>
           <div className="">
-            <button className="p-3 bg-orange-400 text-white  border-2 border-black hover:backdrop-blur-2xl sm:my-10">
-              Start
-            </button>
+            <MyBtn name={"Start"}/>
           </div>
         </div>
         <div className="intro-image h-full md:h-1/2 lg:h-full w-full p-10">

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image"
+import MyBtn from "./MyBtn"
 
 const Intro = () => {
   return (
@@ -34,7 +35,7 @@ const Intro = () => {
             </p>
           </div>
           <div>
-            <button className="p-3 bg-orange-400 text-white  border-2 border-black hover:backdrop-blur-2xl sm:my-10">See More</button>
+            <MyBtn name={"See More"}/>
           </div>
         </div>
       </div>

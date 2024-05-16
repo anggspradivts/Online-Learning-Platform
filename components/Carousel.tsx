@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 
@@ -29,11 +30,15 @@ const Carousel = () => {
       <div className="text-center">
         <p>Start your journey by upgrading some skills</p>
       </div>
-      <div className="category-list flex justify-center gap-5 pt-10">
+      {/* <div className="category-list flex justify-center gap-5 pt-10">
         {filterCard}
-      </div>
+      </div> */}
       <div className="flex justify-center py-10">
-        <button className="p-2 border-2 border-white mt-40 rounded-sm hover:text-orange-400 hover:backdrop-blur-xl transition-all duration-300">Discover More</button>
+        <button className="h-16 w-40 border-2 border-white mt-40 rounded-sm hover:text-orange-400 hover:backdrop-blur-xl transition-all duration-300">
+          <Link href="/courses">
+            Discover More
+          </Link>
+        </button>
       </div>
     </div>
   );

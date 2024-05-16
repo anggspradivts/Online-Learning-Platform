@@ -42,7 +42,8 @@ const course = [
     title: "Learn React in 10 days",
     description: 'React is a JavaScript library for building user interfaces',
     price: "200k",
-    mentor: "Pak Angga"
+    mentor: "Pak Angga",
+    rating: 5,
   }
 ]
 

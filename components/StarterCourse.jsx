@@ -22,11 +22,11 @@ const StarterCourse = () => {
             <div>
               <h1 className="font-bold">{course.title}</h1>
             </div>
-            <div>
-              <p className="font-extralight hover:font-bold">{course.mentor}</p>
+            <div className="flex">
+              <p className="font-extralight hover:font-bold transition-all duration-300 text-sm">{course.mentor}</p>
             </div>
             <div>
-              <p className="font-extralight">{course.description}</p>
+              <p className="font-extralight text-xs">{course.description}</p>
             </div>
             <div>
               <p>{course.price}</p>
