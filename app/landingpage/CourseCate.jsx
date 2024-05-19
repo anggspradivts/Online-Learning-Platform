@@ -1,7 +1,7 @@
 import React from 'react'
 import { filterCourse } from "/data/course"
 import Link from 'next/link'
-import MyBtn from "./MyBtn"
+import MyBtn from "@/components/MyBtn"
 
 const CourseCate = () => {
   const data = filterCourse;

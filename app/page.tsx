@@ -1,11 +1,12 @@
 import LoginPage from "./login/page";
 import PrivatePage from "./private/page";
 import Link from "next/link"
-import Carousel from "@/components/Carousel"
-import Intro from "@/components/Intro"
-import StarterCourse from "@/components/StarterCourse";
-import MentorSec from "@/components/MentorSec"
-import CourseCate from "@/components/CourseCate"
+import Carousel from "@/app/landingpage/Carousel"
+import Intro from "@/app/landingpage/Intro"
+import StarterCourse from "@/app/landingpage/StarterCourse";
+import MentorSec from "@/app/landingpage/MentorSec"
+import CourseCate from "@/app/landingpage/CourseCate"
+// import PrivatePage from "./private/page";
 
 export default function Home() {
   return (

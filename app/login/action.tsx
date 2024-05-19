@@ -47,3 +47,29 @@ export async function signup(formData: FormData) {
   revalidatePath('/', 'layout')
   redirect('/')
 }
+
+export async function signInWithGoogle() {
+  const supabase = createClient();
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: 'http://localhost:3000/auth/callback',
+      queryParams: {
+        access_type: 'offline',
+        prompt: 'consent',
+      },
+    },
+  })
+  
+  if (data.url) {
+    redirect(data.url) // use the redirect API for your server framework
+  }
+
+  console.log("data", data)
+
+  if (error) {
+    console.log("Error when sign in with google", error)
+    redirect('/error')
+  }
+}
