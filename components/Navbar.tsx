@@ -1,28 +1,17 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { signOut } from "@/app/utils/utils";
+import { signOut, getUser } from "@/app/utils/utils";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const getUser = async () => {
-      try {
-        const res = await fetch("/api/getuser", {
-          method: "GET",
-        });
-        if (!res.ok) {
-          console.log("Response from the server is not oke");
-        }
-        const data = await res.json();
-        const userEmail = data.user.email;
-        setUser(userEmail);
-      } catch (error) {
-        console.log("err when fetch getuser", error);
-      }
-    };
-    getUser();
-  }, []);
+    const fetchUser = async () => {
+      const userEmail = await getUser()
+      setUser(userEmail);
+    }
+    fetchUser()
+  }, [])
 
   return (
     <div className="bg-gray-400 p-3 text-white">
@@ -31,11 +20,11 @@ const Navbar = () => {
           <Link href="/">
             <h1 className=" text-2xl font-bold text-white">Online Learning</h1>
           </Link>
-          <Link href="/teach">
+          <Link href="/create/course">
             <h1 className="font-bold text-white">Teach</h1>
           </Link>
           <Link href="/my-courses">
-            <h1 className="font-bold text-white">My Courses</h1>
+            <h1 className="font-bold text-white">My Learning</h1>
           </Link>
         </div>
         <div className="flex items-center justify-end">

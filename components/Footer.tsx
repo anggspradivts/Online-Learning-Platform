@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className="bg-gray-400 p-3">
+    <div className="bg-gray-400 p-3 text-white">
       <div className="grid grid-cols-2">
         <div className="footer-logo">
           <h1 className="font-bold text-2xl">Online Learning</h1>
