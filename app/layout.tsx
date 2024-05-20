@@ -15,11 +15,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const user = true
 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MainLayout>
+        <MainLayout user={user}>
           {children}
         </MainLayout>
       </body>

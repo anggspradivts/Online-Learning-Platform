@@ -8,7 +8,7 @@ export const createCourse = async (user, title) => {
     const { data, error } = await supabase
       .from('course')
       .insert({
-        user: user,
+        user_name: user,
         title: title
       })
       .select()
@@ -18,7 +18,6 @@ export const createCourse = async (user, title) => {
     }
 
     console.log("inserted data;", data)
-    console.log(title)
   } catch (error) {
     console.log("err", error)
   }

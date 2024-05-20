@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { signOut, getUser } from "@/app/utils/utils";
+import UserProfile from "./UserProfile";
 
 const Navbar = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<string | null>(null);
+  const [isHover, setIsHover] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchUser = async () => {
-      const userEmail = await getUser()
+      const userEmail = await getUser();
+      console.log("useremail from navbar", userEmail);
       setUser(userEmail);
-    }
-    fetchUser()
-  }, [])
+    };
+    fetchUser();
+  }, []);
 
   return (
     <div className="bg-gray-400 p-3 text-white">
@@ -37,27 +40,31 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <div className="">
+      <div className="py-2">
         {user === null ? (
           <div className="flex gap-5 items-center">
             <button>
               <Link href="/login">Login</Link>
             </button>
-            <button>SignUp</button>
             <div>Categories</div>
-            <button onClick={() => (window.location.href = "private")}>
-              Go to Private Page
-            </button>
           </div>
         ) : (
-          <div className="flex gap-5 items-center">
-            <h1>welcome {user}</h1>
-            <button
-              className="bg-gray-500 p-1 rounded-xl"
-              onClick={signOut}
+          <div className="">
+            <div
+              onMouseEnter={() => setIsHover(true)}
+              onMouseLeave={() => setIsHover(false)}
+              className="h-[40px] w-[40px] bg-gray-600 flex justify-center items-center rounded-full"
             >
-              SignOut
-            </button>
+              <h1>{user.charAt(0)}</h1>
+            </div>
+            {isHover && (
+              <UserProfile
+                user={user}
+                signOut={signOut}
+                onMouseEnter={() => setIsHover(true)}
+                onMouseLeave={() => setIsHover(false)}
+              />
+            )}
           </div>
         )}
       </div>

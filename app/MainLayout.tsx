@@ -5,19 +5,12 @@ import Footer from "@/components/Footer"
 import { createClient } from "@/utils/supabase/client"
 import { useEffect, useState } from "react";
 
-const MainLayout = ({ children }) => {
-  // const [user, setUser] = useState(null)
-  // const supabase = createClient();
+interface MainLayoutProps {
+  user: boolean;
+  children: React.ReactNode;
+}
 
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     const { data: user, error } = await supabase.auth.getUser();
-  //     if (error) console.log(error.message)
-  //     // setUser(user)
-  //     console.log("user", user.user)
-  //   }
-  //   getUser()
-  // }, [])
+const MainLayout: React.FC<MainLayoutProps> = ({ children, user }) => {
 
   return (
     <div className="">

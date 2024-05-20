@@ -5,7 +5,7 @@ import { getUser } from "@/app/utils/utils"
 
 const Page = () => {
   const [name, setName] = useState("");
-  const [user, setUser] = useState("")
+  const [user, setUser] = useState(null)
 
   const handleSubmit = async (event) => {
     event.preventDefault();

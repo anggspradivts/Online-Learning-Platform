@@ -29,12 +29,12 @@ export const getUser = async () => {
     const res = await fetch("/api/getuser", {
       method: "GET",
     })
-    if(!res.ok) {
-      console.log("Response from the server is not oke")
-    }
+
     const data = await res.json()
-    const userEmail = data.user.email
+    const userEmail = data.user?.email || null
+    console.log("usere", userEmail)
     return userEmail
+    
   } catch (error) {
     console.log("err when fetch getuser", error)
   }

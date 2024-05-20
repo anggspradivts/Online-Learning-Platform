@@ -1,10 +1,11 @@
 import React from 'react'
-import { filterCourse } from "/data/course"
+import { filterCourse } from "@/data/course"
 import Link from 'next/link'
 import MyBtn from "@/components/MyBtn"
 
 const CourseCate = () => {
   const data = filterCourse;
+
   const filterCard = data.map((data, index) => {
     return (
       <Link key={index} href={`/courses/category/${data}`}>
@@ -14,6 +15,7 @@ const CourseCate = () => {
       </Link>
     )
   })
+  
   return (
     <div className='my-40'>
       <div className='text-center my-20'>
