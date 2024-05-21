@@ -5,7 +5,7 @@ import { getUser } from "@/app/utils/utils"
 
 
 const Page = () => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<string | null>(null)
   useEffect(() => {
     const fetchUser = async () => {
       const userEmail = await getUser();
@@ -21,17 +21,6 @@ const Page = () => {
   return (
     <div>
       <h1>Create Course Page</h1>
-      {/* <div>
-        {user === null ? (
-          <div>
-            try login first
-          </div>
-        ) : (
-          <div>
-            <CreateForm />
-          </div>
-        )}
-      </div> */}
       <CreateForm />
     </div>
   )
