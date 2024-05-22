@@ -34,7 +34,7 @@ export const createCourse = async ({
 interface UploadFileProps {
   selectedFile: File;
 }
-export const uploadFile = async ( { selectedFile } : UploadFileProps) => {
+export const uploadFile = async ({ selectedFile }: UploadFileProps) => {
   const supabase = createClient();
   const filePath = `upload/${selectedFile.name}`
   try {
@@ -58,28 +58,6 @@ interface HandleUpload {
 export const handleUploadFile = async (selectedFile: File | null) => {
   if (!selectedFile) return;
 
-  // //v1
-  // const formData = new FormData();
-  // formData.append('file', selectedFile);
-  // console.log("form data", formData)
-  // console.log("sf", selectedFile)
-
-  // try {
-  //   const response = await fetch('/api/upload', {
-  //     method: 'POST',
-  //     body: formData,
-  //   });
-
-  //   if (!response.ok) {
-  //     throw new Error('File upload failed');
-  //   }
-
-  //   const data = await response.json();
-  //   console.log('File uploaded successfully', data);
-  // } catch (error) {
-  //   console.error('Error uploading file from trycatch:', error);
-  // }
-
   const reader = new FileReader();
   reader.readAsDataURL(selectedFile);
 
@@ -89,9 +67,6 @@ export const handleUploadFile = async (selectedFile: File | null) => {
     try {
       const response = await fetch('/api/upload', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         body: JSON.stringify({ fileDataUrl }), // Pass the data URL to the server
       });
 
